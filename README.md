@@ -1,7 +1,7 @@
 
 
 # Colour Palette extraction using Unsupervised Learning
-Extracting 5-colour palettes from various images using unsupervised learning and visualising their relation to one another
+This project explores innovative ways to explore relations between colour palettes in collections of images, using Unsupervised machine learning algorithms(K-Means clustering, Kernel PCA and t-SNE).
 ## Code
 The source code is split into two parts:
 1. Python code to extract a 5-Colour Hexadecimal Palette from an image.
