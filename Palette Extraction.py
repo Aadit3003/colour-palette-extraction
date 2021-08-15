@@ -94,6 +94,15 @@ def display_palettes(palettes):
     i+=1
     show_colours(palette)
 
+# 4) DEMO
+def main():
+    # Add Path of Image as argument
+    show_palette("image.png")
+
+if __name__ == "__main__":
+    main()
+
+
 # 4) PROCESS THE 5-COLOUR EXTRACTED PALETTE
 def rgb_from_hex(color_hex):
   # hex colours are R(0,1) G(2,3) B(4,5) in base 16
