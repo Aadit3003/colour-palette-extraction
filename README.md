@@ -22,7 +22,7 @@ The RBF Kernel PCA algorithm was able to separate the palettes with darker colou
 The t-SNE algorithm was more successful in grouping the palettes with similar colours and separating visually distinct palettes(such as the greens and pinks).
 ![FW 21 t-SNE](https://user-images.githubusercontent.com/82210227/129468410-a9a90e88-7d1d-4ead-8e8e-cf7e7bcaccb1.png)
 
-## 3)Applications
+## 3) Possible Applications
 ### i) Streaming Service Recommendations
 - Colour palettes of video thumbnails could be used to recommend similar videos to users.
 - For the following visualisation, palettes from a random sample of 149 Netflix thumbnails were used.
