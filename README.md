@@ -13,7 +13,7 @@ The 5 colour palettes were extracted by converting the image to a 2D matrix of R
 ![Palette Examples](https://user-images.githubusercontent.com/82210227/129468364-f7f9a8a8-f2bb-491e-94bc-cf5d3c9d4b9b.png)
 - *(Top: Schiaparelli Fall 21 Couture (Look 23))*
 - *(Bottom: Van Gogh-Sunflowers (fourth version))*
-## 2) Palette Visualisation
+## 2) [Palette Visualisation](https://github.com/Aadit3003/Colour-Palette-Extraction/blob/eb8c0b731250722a71d42c2f2affc8b2def455e2/Palette%20Visualisation.py)
 A list of the 5 colour palettes obtained above, were visualised using 2 dimensionality reduction techniques. For the following visualisation, a dataset of 541 images, from multiple Fall 2021 Couture Fashion shows was used.
 ## Kernel PCA
 The RBF Kernel PCA algorithm was able to separate the palettes with darker colours from those with lighter colours, but grouped together palettes with saturated colours.
