@@ -36,6 +36,7 @@ The t-SNE algorithm was more successful in grouping the palettes with similar co
 - *(Top Left: Valentino Fall Couture 21 Look 12)*
 - *(Bottom Right: Schiaparelli Fall Couture 21 Look 20)*
 ### iii) Other Potential Applications
+The concept explored in this project could have interesting applications in many fields like social media analytics, human computer interaction, art trends and so on. For example:
 1. Social media photo trend visualisation.
 2. Innovative visualisation of art pieces from different time periods.
 3. Classifying different kinds of flora by their colour. 
