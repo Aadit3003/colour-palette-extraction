@@ -9,7 +9,8 @@ from collections import Counter
 import cv2
 import os
 
-# PROCESS IMAGE
+# 1) PROCESS IMAGE
+# Image augmentation prior to extracting colours
 def prep_image(image_name):
   image = cv2.imread(image_name)
   image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -21,10 +22,10 @@ def prep_image(image_name):
 
   return image
 
-# EXTRACT COLOURS FROM THE IMAGE (K-MEANS CLUSTERING)
+# 2) EXTRACT COLOURS FROM THE IMAGE (K-MEANS CLUSTERING)
 def RGB2HEX(color):
   return "#{:02x}{:02x}{:02x}".format(int(color[0]), int(color[1]), int(color[2]))
-
+# Extract a 5 colour palette from an image
 def extract_colors(prepped_image, clusters, model, batch=300, type='hex'):
 
   if model=='mini':
@@ -55,7 +56,6 @@ def extract_palette(image_name, color_type='hex'):
     colors = extract_colors(processed_image, 5, 'mini', batch=200)
   return colors
 
-# DISPLAY THE EXTRACTED COLOURS
 def directory_palettes(directory_name, colour_type):
     sample_palettes = []
     directory = directory_name
@@ -72,6 +72,8 @@ def directory_palettes(directory_name, colour_type):
         i += 1
 
     return sample_palettes
+
+# 3) DISPLAY THE EXTRACTED COLOURS
 
 def show_colours(list_colours):
   fig = plt.figure(figsize = (5, 1))
@@ -92,11 +94,11 @@ def display_palettes(palettes):
     i+=1
     show_colours(palette)
 
-# PROCESS THE 5-COLOUR EXTRACTED PALETTE
+# 4) PROCESS THE 5-COLOUR EXTRACTED PALETTE
 def rgb_from_hex(color_hex):
   # hex colours are R(0,1) G(2,3) B(4,5) in base 16
   return tuple(int(color_hex[i:i+2], 16) for i in (0,2,4))
-
+# To sort the palette colours based on brightness
 def sort_tuple(list_of_tuples):
     list_of_tuples.sort(key = lambda x: x[1]+x[0]+x[2])
     return list_of_tuples
@@ -105,12 +107,12 @@ def get_palette_from_string(palette_list):
   list = [rgb_from_hex(color[1:]) for color in palette_list]
   # Sort Colours by brightness (R+G+B roughly) (or else, Yellow Brown and Brown yellow are interpreted as different colours)
   return sort_tuple(list)
-
+# Convert the Palettes from Hexadecimal to CIELAB colour space
 def convert_palettes_to_lab(rgb_palettes):
   scaled_palettes = np.array([rgb_palettes]) / 255.0
   lab_palettes = color.rgb2lab(scaled_palettes)
   return lab_palettes.flatten()
-
+# Obtain matrix of features X from a list of 5-colour palettes
 def features_from_list_of_palettes(list_of_palettes):
     list_of_lists = []
     for palette_list in list_of_palettes:
@@ -130,10 +132,11 @@ def save_palette(palette, file_name):
     plt.savefig(file_name, dpi=300, bbox_inches='tight', pad_inches=0)
     plt.show()
 
-# VISUALISE EXTRACTED COLOUR PALETTES (t-SNE)
+# 5) VISUALISE EXTRACTED COLOUR PALETTES (t-SNE)
+# Obtain Image from the path given
 def getImage(path, zoom):
     return OffsetImage(plt.imread(path), zoom=zoom)
-
+# Add annotations (images of palettes) to the scatter plot
 def scatter(X):
     # plt.scatter(X[:,0], X[:,1], c=colors)
     fig, ax = plt.subplots(figsize=(32, 18))
@@ -147,7 +150,7 @@ def scatter(X):
         ax.add_artist(ab)
     plt.show()
 
-# DEMO
+# 6) DEMO
 def main():
     list_of_palettes = directory_palettes('name_of_directory', 'hex')
     i = 0
