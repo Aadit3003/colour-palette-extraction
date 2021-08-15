@@ -6,7 +6,7 @@ This project explores innovative ways to explore relations between colour palett
 The source code is split into two parts:
 1. Python code to extract a 5-Colour Hexadecimal Palette from an image.
 2. Python code to visualise the relation between a list of the above extracted palettes.
-## 1) [Palette Extraction] (https://github.com/Aadit3003/Colour-Palette-Extraction/blob/850617ec95604604f6fe31d844a28ae39c065c1e/Palette%20Extraction.py)
+## 1) [Palette Extraction](https://github.com/Aadit3003/Colour-Palette-Extraction/blob/850617ec95604604f6fe31d844a28ae39c065c1e/Palette%20Extraction.py)
 The 5 colour palettes were extracted by converting the image to a 2D matrix of RGB Values(Nx3), which was used as input for the Mini Batch K-Means Clustering algorithm to return the colours(hex) from the five cluster centers. 
 - *Here are some examples:*
  
