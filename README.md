@@ -4,7 +4,6 @@
 Extracting 5-collour palettes from various images using unsupervised learning and visualising their relation to one another
 
 ![Palette Examples](https://user-images.githubusercontent.com/82210227/129468364-f7f9a8a8-f2bb-491e-94bc-cf5d3c9d4b9b.png)
-![Palette Methods](https://user-images.githubusercontent.com/82210227/129468404-a7e12d68-9bef-4d6b-908e-ee6d7bb57ada.png)
 
 ![FW 21 Kernel PCA](https://user-images.githubusercontent.com/82210227/129468412-38535f23-6856-408b-8b58-d7238a69bb4e.png)
 
